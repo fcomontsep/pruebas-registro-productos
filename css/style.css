@@ -1,0 +1,144 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, sans-serif;
+	font-size: 16px;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+}
+
+/* ---- DECORACIÓN DEL FORMULARIO ---- */
+
+form#formulario-producto {
+	padding: 30px 40px;
+	border-radius: 8px;
+	box-shadow: 0 0 12px rgba(0, 0, 0, 1);
+	width: 100%;
+	max-width: 50%;
+	box-sizing: border-box;
+	border: 1px solid #000;
+}
+
+.texto-formulario {
+	margin: 50px;
+	text-align: center;
+	font-size: 52px;
+}
+
+/* ---- DECORACIÓN DE LOS CAMPOS Y RECUADROS DE TEXTO ---- */
+
+.grid-campos {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 5px 20px;
+	margin-bottom: 10px;
+}
+
+.grid-campos div {
+	display: flex;
+	flex-direction: column;
+}
+
+label {
+	margin-bottom: 6px;
+}
+
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+	width: 100%;
+	padding: 7px;
+	margin-bottom: 20px;
+	border: 1px solid #000;
+	border-radius: 6px;
+	box-sizing: border-box;
+	font-size: 13px;
+}
+
+.campo-descripcion {
+	margin-bottom: 10px;
+}
+
+/* ---- DECORACIÓN DEL RECUADRO DE CASILLAS ---- */
+
+fieldset {
+	border: 0;
+	margin-bottom: 20px;
+}
+
+legend {
+	margin-bottom: 15px;
+}
+
+fieldset label {
+	margin-right: 10px;
+}
+
+/* ---- PARA TENER UN CHECK AZUL EN VEZ DEL GRIS ---- */
+
+input[type="checkbox"] {
+	margin-right: 15px;
+	transform: scale(0.7);
+}
+
+.material-fila {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 15px;
+}
+
+.checkbox-item {
+	display: flex;
+	align-items: center;
+}
+
+.checkbox-item input[type="checkbox"] {
+	margin-right: 8px;
+	width: 16px;
+	height: 16px;
+	border: 1px solid #000;
+	appearance: none;
+	border-radius: 2px;
+	cursor: pointer;
+	margin-top: -10px;
+}
+
+.checkbox-item input[type="checkbox"]:checked {
+	background-color: #0073ff;
+	border-color: #0073ff;
+}
+
+.checkbox-item input[type="checkbox"]:checked::after {
+	content: "";
+	position: absolute;
+	left: 5px;
+	top: -1px;
+	width: 3px;
+	height: 12px;
+	border: solid white;
+	border-width: 0 2px 2px 0;
+	transform: rotate(45deg);
+}
+
+/* ---- BOTÓN DE GUARDAR PRODUCTO ---- */
+
+.boton-guardar {
+	text-align: center;
+}
+
+button[type="submit"] {
+	background-color: #1aab8a;
+	color: white;
+	border: none;
+	padding: 12px 100px;
+	border-radius: 6px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}

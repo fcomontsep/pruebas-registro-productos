@@ -3,99 +3,125 @@
 	<head>
 		<meta charset="UTF-8" />
 		<title>Formulario de Producto</title>
+		<link rel="stylesheet" href="css/style.css" />
 	</head>
 	<body>
-		<h1>Formulario de Producto</h1>
-
 		<form id="formulario-producto" action="#" method="POST">
-			<label for="codigo">Código</label>
-			<input type="text" id="codigo" name="codigo" required />
-			<br /><br />
+			<h1 class="texto-formulario">Formulario de Producto</h1>
 
-			<label for="nombre">Nombre</label>
-			<input type="text" id="nombre" name="nombre" required />
-			<br /><br />
+			<!---- SEIS CAMPOS EN GRID DE 2 COLUMNAS Y 3 FILAS ---->
 
-			<label for="bodega">Bodega</label>
-			<select id="bodega" name="bodega" required>
-				<option value="">Seleccione...</option>
-				<option value="bodega-1">Bodega 1</option>
-				<option value="bodega-2">Bodega 2</option>
-				<option value="bodega-3">Bodega 3</option>
-			</select>
-			<br /><br />
+			<div class="grid-campos">
+				<div>
+					<label for="codigo">Código</label>
+					<input type="text" id="codigo" name="codigo" required />
+				</div>
+				<div>
+					<label for="nombre">Nombre</label>
+					<input type="text" id="nombre" name="nombre" required />
+				</div>
+				<div>
+					<label for="bodega">Bodega</label>
+					<select id="bodega" name="bodega" required>
+						<option value="" selected hidden></option>
+						<option value="bodega-1">Bodega 1</option>
+						<option value="bodega-2">Bodega 2</option>
+						<option value="bodega-3">Bodega 3</option>
+					</select>
+				</div>
+				<div>
+					<label for="sucursal">Sucursal</label>
+					<select id="sucursal" name="sucursal" required>
+						<option value="" selected hidden></option>
+						<option value="sucursal-1">Sucursal 1</option>
+						<option value="sucursal-2">Sucursal 2</option>
+						<option value="sucursal-3">Sucursal 3</option>
+					</select>
+				</div>
+				<div>
+					<label for="moneda">Moneda</label>
+					<select id="moneda" name="moneda" required>
+						<option value="" selected hidden></option>
+						<option value="peso">PESO</option>
+						<option value="dolar">DÓLAR</option>
+					</select>
+				</div>
+				<div>
+					<label for="precio">Precio</label>
+					<input type="number" id="precio" name="precio" required />
+				</div>
+			</div>
 
-			<label for="sucursal">Sucursal</label>
-			<select id="sucursal" name="sucursal" required>
-				<option value="">Seleccione...</option>
-				<option value="sucursal-1">Sucursal 1</option>
-				<option value="sucursal-2">Sucursal 2</option>
-				<option value="sucursal-3">Sucursal 3</option>
-			</select>
-			<br /><br />
-
-			<label for="moneda">Moneda</label>
-			<select id="moneda" name="moneda" required>
-				<option value="">Seleccione...</option>
-				<option value="peso">PESO</option>
-				<option value="dolar">DÓLAR</option>
-			</select>
-			<br /><br />
-
-			<label for="precio">Precio</label>
-			<input type="number" id="precio" name="precio" required />
-			<br /><br />
+			<!---- SELECCIÓN DE MATERIALES EN CASILLAS ---->
 
 			<fieldset>
 				<legend>Material del Producto</legend>
-				<input
-					type="checkbox"
-					id="plastico"
-					name="material[]"
-					value="Plástico"
-				/>
-				<label for="plastico">Plástico</label>
-				<input
-					type="checkbox"
-					id="metal"
-					name="material[]"
-					value="Metal"
-				/>
-				<label for="metal">Metal</label>
-				<input
-					type="checkbox"
-					id="madera"
-					name="material[]"
-					value="Madera"
-				/>
-				<label for="madera">Madera</label>
-				<input
-					type="checkbox"
-					id="vidrio"
-					name="material[]"
-					value="Vidrio"
-				/>
-				<label for="vidrio">Vidrio</label>
-				<input
-					type="checkbox"
-					id="textil"
-					name="material[]"
-					value="Textil"
-				/>
-				<label for="textil">Textil</label>
+				<div class="material-fila">
+					<div class="checkbox-item">
+						<input
+							type="checkbox"
+							id="plastico"
+							name="material[]"
+							value="Plástico"
+						/>
+						<label for="plastico">Plástico</label>
+					</div>
+					<div class="checkbox-item">
+						<input
+							type="checkbox"
+							id="metal"
+							name="material[]"
+							value="Metal"
+						/>
+						<label for="metal">Metal</label>
+					</div>
+					<div class="checkbox-item">
+						<input
+							type="checkbox"
+							id="madera"
+							name="material[]"
+							value="Madera"
+						/>
+						<label for="madera">Madera</label>
+					</div>
+					<div class="checkbox-item">
+						<input
+							type="checkbox"
+							id="vidrio"
+							name="material[]"
+							value="Vidrio"
+						/>
+						<label for="vidrio">Vidrio</label>
+					</div>
+					<div class="checkbox-item">
+						<input
+							type="checkbox"
+							id="textil"
+							name="material[]"
+							value="Textil"
+						/>
+						<label for="textil">Textil</label>
+					</div>
+				</div>
 			</fieldset>
-			<br />
 
-			<label for="descripcion">Descripción</label><br />
+			<!---- DESCRIPCIÓN DEL PRODUCTO ---->
+
+			<div class="campo-descripcion">
+				<label for="descripcion">Descripción</label>
+			</div>
 			<textarea
 				id="descripcion"
 				name="descripcion"
 				rows="4"
 				cols="50"
 			></textarea>
-			<br /><br />
 
-			<button type="submit">Guardar Producto</button>
+			<!---- BOTÓN DE GUARDAR PRODUCTO ---->
+
+			<div class="boton-guardar">
+				<button type="submit">Guardar Producto</button>
+			</div>
 		</form>
 	</body>
 </html>

@@ -28,7 +28,8 @@ form#formulario-producto {
 .texto-formulario {
 	margin: 50px;
 	text-align: center;
-	font-size: 52px;
+	font-size: 2.7vw;
+	white-space: nowrap;
 }
 
 /* ---- DECORACIÓN DE LOS CAMPOS Y RECUADROS DE TEXTO ---- */
@@ -59,11 +60,15 @@ textarea {
 	border: 1px solid #000;
 	border-radius: 6px;
 	box-sizing: border-box;
-	font-size: 13px;
+	font-size: 14px;
 }
 
 .campo-descripcion {
 	margin-bottom: 10px;
+}
+
+#descripcion {
+	height: 70px;
 }
 
 /* ---- DECORACIÓN DEL RECUADRO DE CASILLAS ---- */
@@ -78,7 +83,7 @@ legend {
 }
 
 fieldset label {
-	margin-right: 10px;
+	margin-right: 0px;
 }
 
 /* ---- PARA TENER UN CHECK AZUL EN VEZ DEL GRIS ---- */
@@ -100,7 +105,7 @@ input[type="checkbox"] {
 }
 
 .checkbox-item input[type="checkbox"] {
-	margin-right: 8px;
+	margin-right: 12px;
 	width: 16px;
 	height: 16px;
 	border: 1px solid #000;

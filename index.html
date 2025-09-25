@@ -14,15 +14,15 @@
 			<div class="grid-campos">
 				<div>
 					<label for="codigo">Código</label>
-					<input type="text" id="codigo" name="codigo" required />
+					<input type="text" id="codigo" name="codigo" />
 				</div>
 				<div>
 					<label for="nombre">Nombre</label>
-					<input type="text" id="nombre" name="nombre" required />
+					<input type="text" id="nombre" name="nombre" />
 				</div>
 				<div>
 					<label for="bodega">Bodega</label>
-					<select id="bodega" name="bodega" required>
+					<select id="bodega" name="bodega">
 						<option value="" selected hidden></option>
 						<option value="bodega-1">Bodega 1</option>
 						<option value="bodega-2">Bodega 2</option>
@@ -31,7 +31,7 @@
 				</div>
 				<div>
 					<label for="sucursal">Sucursal</label>
-					<select id="sucursal" name="sucursal" required>
+					<select id="sucursal" name="sucursal">
 						<option value="" selected hidden></option>
 						<option value="sucursal-1">Sucursal 1</option>
 						<option value="sucursal-2">Sucursal 2</option>
@@ -40,7 +40,7 @@
 				</div>
 				<div>
 					<label for="moneda">Moneda</label>
-					<select id="moneda" name="moneda" required>
+					<select id="moneda" name="moneda">
 						<option value="" selected hidden></option>
 						<option value="peso">PESO</option>
 						<option value="dolar">DÓLAR</option>
@@ -48,7 +48,7 @@
 				</div>
 				<div>
 					<label for="precio">Precio</label>
-					<input type="number" id="precio" name="precio" required />
+					<input type="number" id="precio" name="precio" step="0.01"/>
 				</div>
 			</div>
 
@@ -123,5 +123,10 @@
 				<button type="submit">Guardar Producto</button>
 			</div>
 		</form>
+
+		<!---- JAVASCRIPT ---->
+		
+		<script src="js/validar-formulario.js"></script>
+
 	</body>
 </html>

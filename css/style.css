@@ -52,6 +52,13 @@ label {
 	margin-bottom: 6px;
 }
 
+/* ---- CORRECCIÓN ESPECÍFICA A FIREFOX: FONDO DE SELECTS ---- */
+
+select {
+    background-color: #fff;
+    color: #000;
+}
+
 input[type="text"],
 input[type="number"],
 select,

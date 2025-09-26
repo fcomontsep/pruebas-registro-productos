@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			return;
 		}
 
-		// VALIDACIÓN DEL PRECIO DEL PRODUCTO.
+		// VALIDACIÓN DEL PRECIO DEL PRODUCTO. INCLUÍ UNA COMPROBACIÓN EXTRA PARA EL LÍMITE SUPERIOR.
 		const precio = document.getElementById("precio").value.trim();
 		const regexPrecio = /^(?!0+(?:\.0+)?$)\d+(\.\d{1,2})?$/;
 		if (precio === "") {
@@ -58,6 +58,11 @@ document.addEventListener("DOMContentLoaded", function () {
 		} else if (!regexPrecio.test(precio)) {
 			e.preventDefault();
 			alert("El precio del producto debe ser un número positivo con hasta dos decimales.");
+			document.getElementById("precio").focus();
+			return;
+		} else if (parseFloat(precio) > 9999999999.99) {
+			e.preventDefault();
+			alert("El precio del producto excede el límite permitido.");
 			document.getElementById("precio").focus();
 			return;
 		}

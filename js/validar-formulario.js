@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			document.getElementById("descripcion").focus();
 			return;
 		}
-		formulario.submit(); // IMPORTANTE - O el formulario se recargará antes de lo asincrónico.
+		guardarProducto(); // IMPORTANTE - O el formulario se recargará antes de lo asincrónico.
 	});
 
 	// FUNCIÓN PARA VERIFICAR CÓDIGO CON PHP

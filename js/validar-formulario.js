@@ -1,9 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
 	const formulario = document.getElementById("formulario-producto");
 
-	formulario.addEventListener("submit", function (e) {
-		// VALIDACIÓN DEL CÓDIGO ENTREGADO AL FORMULARIO.
-		// PENDIENTE - VALIDAR QUE NO EXISTA PREVIAMENTE EN LA BASE DE DATOS.
+	formulario.addEventListener("submit", async function (e) {
+		e.preventDefault();		// IMPORTANTE - O el formulario se recargará antes de lo asincrónico.
+
+		// VALIDACIÓN DEL CÓDIGO ENTREGADO AL FORMULARIO
 		const codigo = document.getElementById("codigo").value.trim();
 		const regexCodigo = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]+$/;
 		if (codigo === "") {
@@ -19,6 +20,15 @@ document.addEventListener("DOMContentLoaded", function () {
 		} else if (codigo.length < 5 || codigo.length > 15) {
 			e.preventDefault();
 			alert("El código del producto debe tener entre 5 y 15 caracteres.");
+			document.getElementById("codigo").focus();
+			return;
+		}
+
+		// VALIDACIÓN DE UNICIDAD DEL CÓDIGO MEDIANTE AJAX / PHP
+		const existeCodigo = await verificaCodigo(codigo);
+		if (existeCodigo) {
+			e.preventDefault();
+			alert("El código del producto ya está registrado.");
 			document.getElementById("codigo").focus();
 			return;
 		}
@@ -100,5 +110,23 @@ document.addEventListener("DOMContentLoaded", function () {
 			document.getElementById("descripcion").focus();
 			return;
 		}
+		formulario.submit(); // IMPORTANTE - O el formulario se recargará antes de lo asincrónico.
 	});
+
+	// FUNCIÓN PARA VERIFICAR CÓDIGO CON PHP
+	async function verificaCodigo(codigo) {
+		try {
+			const res = await fetch("php/sql-verifica-codigo.php", {
+				method: "POST",
+				headers: { "Content-Type": "application/x-www-form-urlencoded" },
+				body: "codigo=" + encodeURIComponent(codigo),
+			});
+
+			const data = await res.json();
+			return data.existe === true;
+		} catch (err) {
+			console.error("Error al verificar código:", err);
+			return false;
+		}
+	}
 });

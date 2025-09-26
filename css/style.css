@@ -25,6 +25,8 @@ form#formulario-producto {
 	border: 1px solid #000;
 }
 
+/* ---- ASEGURAR TÍTULO CON TAMAÑO ADECUADO. COMPROBADO ENTRE 1024x768 y 1920x1080 ---- */
+
 .texto-formulario {
 	margin: 50px;
 	text-align: center;

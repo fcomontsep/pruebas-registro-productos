@@ -22,8 +22,8 @@
 	$sucursales = [];
 	while ($fila = pg_fetch_assoc($result)) {
 		$sucursales[] = [
-			'codigo' => $fila['sc_codigo'],
-			'nombre' => $fila['sc_nombre']
+			'sc_codigo' => $fila['sc_codigo'],
+			'sc_nombre' => $fila['sc_nombre']
 		];
 	}
 

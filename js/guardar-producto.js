@@ -2,6 +2,8 @@ async function guardarProducto() {
 	const formulario = document.getElementById("formulario-producto");
 	const formData = new FormData(formulario);
 
+	// INSERCIÓN DE DATOS A LA BASE. SE NOTIFICA AL CLIENTE DEL ÉXITO O FRACASO DE ESTE PROCESO.
+
 	try {
 		const res = await fetch("php/sql-inserta-producto.php", {
 			method: "POST",

@@ -17,7 +17,7 @@ async function cargarSelect(url, selectId, valueKey, textKey) {
 		// COMENZAR EN BLANCO LA SELECCIÓN; AGREGAR ITEMS EXISTENTES EN LA BASE DE DATOS.
 
 		const select = document.getElementById(selectId);
-		select.innerHTML = '<option value="" selected hidden></option>';
+		select.innerHTML = '<option value="" selected></option>';
 
 		datos.forEach((item) => {
 			const option = document.createElement("option");
@@ -32,7 +32,7 @@ async function cargarSelect(url, selectId, valueKey, textKey) {
 
 async function cargarSucursalPorBodega(bdCodigo, selectId = "sucursal") {
 	const selectSucursal = document.getElementById(selectId);
-	selectSucursal.innerHTML = '<option value="" selected hidden></option>';
+	selectSucursal.innerHTML = '<option value="" selected></option>';
 
 	// SI UNA BODEGA NO CUENTA CON SUCURSALES, FINALIZAR AQUÍ.
 

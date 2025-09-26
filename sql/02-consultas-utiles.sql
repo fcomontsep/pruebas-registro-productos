@@ -5,12 +5,12 @@ INSERT INTO producto (
   mn_codigo, bd_codigo, sc_codigo
 ) VALUES
 ('PROD03A', 'Juego Living', 3000.00,
- 'Elegante set de living.',
- 1, 1, 2),
+  'Elegante set de living.',
+  1, 1, 2),
 
- ('PROD0252I', 'Televisión moderna', 900000.00,
- 'Televisión de última generación con tecnología que simplemente no puedes perderte.',
- 2, 2, 3);
+  ('PROD0252I', 'Televisión moderna', 900000.00,
+  'Televisión de última generación con tecnología que simplemente no puedes perderte.',
+  2, 2, 3);
 
 INSERT INTO componente (pd_codigo, mt_codigo) VALUES
 ('PROD03A', 3),
